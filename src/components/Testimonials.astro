@@ -1,0 +1,102 @@
+---
+---
+<section class="section bg-dark">
+    <div class="container testimonials-wrapper fade-up">
+        <div class="quote-mark serif">"</div>
+        <div id="test-slider">
+            <div class="test-item active">
+                <h3 class="serif">El lugar es muy lindo, elegante y te atienden literalmente como una reina. Excelente servicio.</h3>
+                <p>— María G.</p>
+            </div>
+            <div class="test-item">
+                <h3 class="serif">El mejor balayage de Guadalajara. Entendieron perfecto lo que quería y cuidaron mi cabello.</h3>
+                <p>— Ana Sofía L.</p>
+            </div>
+            <div class="test-item">
+                <h3 class="serif">Profesionalismo total. Salgo feliz con mi color y el trato te invita a regresar siempre.</h3>
+                <p>— Carmen R.</p>
+            </div>
+        </div>
+        <div class="test-controls">
+            <button id="t-prev">Ant</button> / <button id="t-next">Sig</button>
+        </div>
+    </div>
+</section>
+<style>
+.bg-dark {
+    background-color: var(--text-dark);
+    color: var(--bg-color);
+    padding: 10rem 0;
+}
+.testimonials-wrapper {
+    position: relative;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.quote-mark {
+    font-size: 8rem;
+    line-height: 0;
+    color: var(--accent);
+    margin-bottom: 3rem;
+    opacity: 0.5;
+}
+.test-item {
+    display: none;
+    animation: fadeIn 0.8s ease;
+}
+.test-item.active {
+    display: block;
+}
+.test-item h3 {
+    font-size: clamp(1.8rem, 4vw, 3.5rem);
+    font-style: italic;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+.test-item p {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-light);
+}
+.test-controls {
+    margin-top: 4rem;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.test-controls button {
+    background: none; border: none; color: inherit; font: inherit; cursor: pointer; padding: 0.5rem; transition: color 0.3s;
+}
+.test-controls button:hover { color: var(--accent); }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const items = document.querySelectorAll('.test-item');
+        let current = 0;
+        const next = document.getElementById('t-next');
+        const prev = document.getElementById('t-prev');
+        if(!next || items.length === 0) return;
+        
+        function show(i) {
+            items.forEach(el => el.classList.remove('active'));
+            items[i].classList.add('active');
+        }
+        
+        next.addEventListener('click', () => {
+            current = (current + 1) % items.length;
+            show(current);
+        });
+        prev.addEventListener('click', () => {
+            current = (current - 1 + items.length) % items.length;
+            show(current);
+        });
+    });
+</script>

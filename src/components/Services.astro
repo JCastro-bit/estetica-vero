@@ -1,0 +1,70 @@
+---
+---
+<section id="servicios" class="section">
+    <div class="container">
+        <div class="services-header fade-up">
+            <span class="eyebrow">Experiencia</span>
+            <h2 class="serif">Nuestros<br>Tratamientos</h2>
+        </div>
+        
+        <ul class="services-list fade-up">
+            <li>
+                <div class="service-title serif">Corte & Peinado</div>
+                <div class="service-desc">Esculpido capilar y estilizado diseñado para enmarcar tu rostro.</div>
+            </li>
+            <li>
+                <div class="service-title serif">Coloración Alta Gama</div>
+                <div class="service-desc">Balayage, babylights y matices con productos de cuidado profundo.</div>
+            </li>
+            <li>
+                <div class="service-title serif">Spa Capilar</div>
+                <div class="service-desc">Botox, keratina y rituales de hidratación para devolver la vida a tu cabello.</div>
+            </li>
+            <li>
+                <div class="service-title serif">Maquillaje Editorial</div>
+                <div class="service-desc">Look de novia, social e impresos con técnica impecable.</div>
+            </li>
+            <li>
+                <div class="service-title serif">Nail Studio</div>
+                <div class="service-desc">Manicura rusa, diseño en gel y acabados perfectos.</div>
+            </li>
+        </ul>
+    </div>
+</section>
+<style>
+.services-header {
+    margin-bottom: 4rem;
+}
+.eyebrow {
+    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); margin-bottom: 1rem; display: block;
+}
+.services-header h2 { font-size: clamp(3rem, 6vw, 5rem); line-height: 1; margin-left: auto; width: fit-content; text-align: right; }
+
+.services-list {
+    border-top: 1px solid var(--accent-light);
+}
+.services-list li {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--accent-light);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: var(--transition-fast);
+}
+.services-list li:hover {
+    padding-left: 2rem;
+    background-color: rgba(214, 197, 195, 0.1);
+}
+.service-title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: var(--text-dark);
+}
+.service-desc {
+    font-size: 1rem; color: #666; max-width: 400px;
+}
+
+@media (min-width: 768px) {
+    .services-list li { flex-direction: row; align-items: center; justify-content: space-between; gap: 4rem; }
+    .service-desc { text-align: right; }
+}
+</style>

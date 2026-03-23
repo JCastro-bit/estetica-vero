@@ -1,0 +1,199 @@
+---
+---
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Estética Vero | Salón de Belleza y Peluquería Femenina en Guadalajara</title>
+		<meta name="description" content="Estética Vero es el salón de belleza femenino de lujo en Guadalajara. Expertas en corte, coloración, balayage, tratamientos capilares y maquillaje profesional." />
+		<link rel="canonical" href="https://esteticavero.com/" />
+		
+		<!-- Open Graph / Social -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://esteticavero.com/" />
+		<meta property="og:title" content="Estética Vero | Salón de Belleza Femenino" />
+		<meta property="og:description" content="Estética Vero es el salón de belleza femenino de lujo en Guadalajara. Tu belleza, nuestra pasión." />
+		<meta property="og:image" content="https://esteticavero.com/images/salon.png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content="https://esteticavero.com/" />
+		<meta name="twitter:title" content="Estética Vero | Salón de Belleza Femenino" />
+		<meta name="twitter:description" content="Estética Vero es el salón de belleza femenino de lujo en Guadalajara. Tu belleza, nuestra pasión." />
+		<meta name="twitter:image" content="https://esteticavero.com/images/salon.png" />
+		
+		<!-- Performance Hints -->
+		<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+		
+		<!-- FontAwesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+		<!-- Schema.org JSON-LD -->
+		<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@type": "BeautySalon",
+		  "name": "Estética Vero",
+		  "image": "https://esteticavero.com/images/salon.png",
+		  "description": "Salón de belleza femenino de lujo en Guadalajara.",
+		  "url": "https://esteticavero.com/",
+		  "telephone": "+523334922117",
+		  "address": {
+			"@type": "PostalAddress",
+			"streetAddress": "Av. Chapultepec Sur 123",
+			"addressLocality": "Guadalajara",
+			"addressRegion": "JAL",
+			"postalCode": "44160",
+			"addressCountry": "MX"
+		  },
+		  "aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.9",
+			"reviewCount": "181"
+		  }
+		}
+		</script>
+	</head>
+	<body>
+		<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+		<div class="noise-overlay"></div>
+		<main id="main-content">
+			<slot />
+		</main>
+		
+		<a href="https://wa.me/523334922117" class="fab-contact" target="_blank" rel="noopener noreferrer">
+			<span>Reservar</span>
+		</a>
+		
+		<script is:inline>
+			document.addEventListener('DOMContentLoaded', () => {
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if(entry.isIntersecting){
+							entry.target.classList.add('visible');
+						}
+					});
+				}, { threshold: 0.1 });
+				
+				document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+			});
+		</script>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--bg-color: #f7f5f2;
+		--text-dark: #1e1b18;
+		--accent: #6b3e45;
+		--accent-light: #d6c5c3;
+		--accent-gold: #b2906b;
+		
+		--font-serif: 'Cormorant Garamond', serif;
+		--font-sans: 'Outfit', sans-serif;
+		
+		--transition-slow: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+		--transition-fast: all 0.3s ease;
+	}
+
+	.skip-link {
+		position: absolute;
+		top: -40px;
+		left: 0;
+		background: var(--text-dark);
+		color: white;
+		padding: 8px;
+		z-index: 10000;
+		transition: top 0.2s;
+	}
+	.skip-link:focus {
+		top: 0;
+	}
+
+	* { margin: 0; padding: 0; box-sizing: border-box; }
+
+	html { scroll-behavior: smooth; }
+
+	body {
+		background-color: var(--bg-color);
+		color: var(--text-dark);
+		font-family: var(--font-sans);
+		line-height: 1.5;
+		overflow-x: hidden;
+		font-weight: 300;
+	}
+
+	.noise-overlay {
+		position: fixed;
+		top: 0; left: 0; width: 100vw; height: 100vh;
+		pointer-events: none;
+		z-index: 9999;
+		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+	}
+
+	h1, h2, h3, h4, .serif {
+		font-family: var(--font-serif);
+		font-weight: 400;
+	}
+
+	ul { list-style: none; }
+	a { text-decoration: none; color: inherit; }
+	img { max-width: 100%; display: block; object-fit: cover; }
+
+	.container {
+		width: 100%;
+		max-width: 1400px;
+		margin: 0 auto;
+		padding: 0 5%;
+	}
+
+	/* Animations */
+	.fade-up {
+		opacity: 0;
+		transform: translateY(40px);
+		transition: var(--transition-slow);
+	}
+	.fade-up.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	.fab-contact {
+		position: fixed;
+		bottom: 40px; right: 40px;
+		background: var(--text-dark);
+		color: var(--bg-color);
+		width: 80px; height: 80px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center; justify-content: center;
+		font-family: var(--font-sans);
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		z-index: 1000;
+		transition: var(--transition-fast);
+		box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+	}
+	.fab-contact:hover {
+		background: var(--accent);
+		transform: scale(1.05);
+	}
+
+    .section { padding: 8rem 0; }
+    
+    .text-reveal { overflow: hidden; }
+    .text-reveal > * {
+        display: block;
+        transform: translateY(100%);
+        transition: transform 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+    }
+    .text-reveal.visible > * { transform: translateY(0); }
+</style>

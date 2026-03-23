@@ -1,0 +1,27 @@
+---
+---
+<section id="nosotros" class="section">
+    <div class="container flex-about fade-up">
+        <div class="about-t">
+            <h2 class="serif">Nuestra<br>Esencia</h2>
+        </div>
+        <div class="about-d">
+            <p>Con pasión y dedicación, Estética Vero se ha posicionado como un referente de belleza, feminidad y cuidado personal. Nuestro equipo de profesionales en Guadalajara domina las últimas tendencias y técnicas, garantizando resultados impecables en un entorno verdaderamente elegante.</p>
+        </div>
+    </div>
+</section>
+<style>
+.flex-about {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 0 5%;
+}
+.about-t h2 { font-size: clamp(3rem, 6vw, 5rem); line-height: 0.9; }
+.about-d { max-width: 500px; font-size: 1.1rem; color: #444; }
+@media (min-width: 768px) {
+    .flex-about { flex-direction: row; justify-content: space-between; align-items: flex-end; }
+    .about-t { width: 50%; }
+    .about-d { width: 40%; font-size: 1.25rem; }
+}
+</style>

@@ -1,0 +1,53 @@
+---
+---
+<header class="header">
+    <div class="header-inner container">
+        <a href="#" class="logo serif">VERO.</a>
+        <nav class="nav">
+            <a href="#servicios">Tratamientos</a>
+            <a href="#nosotros">Esencia</a>
+            <a href="#galeria">Estudio</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </div>
+</header>
+<style>
+.header {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    padding: 2.5rem 0;
+    z-index: 100;
+    mix-blend-mode: difference;
+    color: #fff;
+    transition: padding 0.5s ease;
+}
+.header.scrolled {
+    padding: 1.5rem 0;
+}
+.header-inner {
+    display: flex; justify-content: space-between; align-items: center;
+}
+.logo {
+    font-size: 2.2rem;
+    letter-spacing: -1px;
+    font-style: italic;
+}
+.nav { display: none; }
+@media (min-width: 768px) {
+    .nav { display: flex; gap: 3rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; }
+    .nav a { position: relative; }
+    .nav a::after {
+        content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: currentColor; transition: width 0.3s ease;
+    }
+    .nav a:hover::after { width: 100%; }
+}
+</style>
+<script>
+    const header = document.querySelector('.header');
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        });
+    }
+</script>
